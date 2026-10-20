@@ -21,3 +21,4 @@ def cari_buku(daftar_buku):
             print(f"{idx}. ID: {buku.get('id', '-')} | Judul: {buku.get('judul', '-')} | Penulis: {buku.get('penulis', '-')} | Status: {buku.get('status', '-')}")
     else:
         print("\n[!] Buku tidak ditemukan.")
+        print("\n[!] Buku tidak ditemukan.")

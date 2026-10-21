@@ -1,7 +1,7 @@
 """Fitur 5: Filter buku berdasarkan genre (partial, tidak case sensitive)."""
 from data.koleksi import koleksi_buku
 from utils.validasi import input_tidak_kosong
-from utils.tampilan import cetak_tabel
+from utils.tampilan_tabel import cetak_tabel
 
 
 def filter_genre():

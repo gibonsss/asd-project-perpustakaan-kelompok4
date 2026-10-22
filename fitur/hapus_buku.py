@@ -1,25 +1,38 @@
-def hapus_buku(daftar_buku):
-    if not daftar_buku:
-        print("\n[!] Data buku masih kosong.")
+"""Fitur 3: Cari buku berdasarkan kode (exact) atau judul (partial)."""
+from data.koleksi import koleksi_buku, cari_by_kode
+from utils.validasi import input_tidak_kosong
+from utils.tampilan import cetak_tabel
+
+
+def _cari_berdasarkan_kode():
+    kode = input_tidak_kosong("Masukkan kode buku")
+    buku = cari_by_kode(kode)
+    if buku is None:
+        print(f"Buku dengan kode '{kode}' tidak ditemukan dalam koleksi.")
         return
+    print("Buku ditemukan:")
+    cetak_tabel([buku])
 
-    katakunci = input("Masukkan ID atau Judul buku yang ingin dihapus: ").strip().lower()
-    if not katakunci:
-        print("\n[!] Input tidak boleh kosong.")
+
+def _cari_berdasarkan_judul():
+    kata = input_tidak_kosong("Masukkan kata kunci judul")
+    hasil = [b for b in koleksi_buku if kata.lower() in b["judul"].lower()]
+    if not hasil:
+        print(f"Tidak ada buku dengan judul yang mengandung '{kata}'.")
         return
+    print(f"Ditemukan {len(hasil)} buku dengan judul mengandung '{kata}':")
+    cetak_tabel(hasil)
 
-    buku_ditemukan = None
-    for buku in daftar_buku:
-        if str(buku.get('id', '')).lower() == katakunci or str(buku.get('judul', '')).lower() == katakunci:
-            buku_ditemukan = buku
-            break
 
-    if buku_ditemukan:
-        konfirmasi = input(f"Apakah kamu yakin ingin menghapus '{buku_ditemukan.get('judul')}'? (y/n): ").strip().lower()
-        if konfirmasi == 'y':
-            daftar_buku.remove(buku_ditemukan)
-            print("\n[✓] Buku berhasil dihapus.")
-        else:
-            print("\n[-] Penghapusan dibatalkan.")
+def cari_buku():
+    """Menu pencarian: pilih mode (kode/judul), input kata kunci, tampilkan hasil."""
+    print("=== CARI BUKU ===")
+    print("1. Cari berdasarkan kode")
+    print("2. Cari berdasarkan judul")
+    pilihan = input("Pilih mode pencarian: ").strip()
+    if pilihan == "1":
+        _cari_berdasarkan_kode()
+    elif pilihan == "2":
+        _cari_berdasarkan_judul()
     else:
-        print("\n[!] Buku tidak ditemukan.")
+        print("Pilihan tidak valid. Masukkan 1 atau 2.")

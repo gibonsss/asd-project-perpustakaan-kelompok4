@@ -38,6 +38,7 @@ def main():
             MENU[pilihan][1]()
         else:
             print("Pilihan tidak valid. Masukkan angka 0 sampai 6.")
+        input("\nTekan Enter untuk kembali ke menu...")
 
 
 if __name__ == "__main__":

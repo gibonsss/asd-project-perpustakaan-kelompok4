@@ -1,31 +1,26 @@
-# utils/tampilan.py
+"""Fungsi tampilan yang dipakai bersama (F2, F3 judul, F5)."""
+
+
+def _potong(teks, panjang):
+    """Memotong teks yang melebihi lebar kolom agar tabel tetap rapi."""
+    teks = str(teks)
+    if len(teks) > panjang:
+        return teks[:panjang - 3] + "..."
+    return teks
+
 
 def cetak_tabel(daftar_buku):
-    """
-    Mencetak daftar buku dalam format tabel yang rapi.
-    Menerima parameter berupa list of dictionaries.
-    """
-    if not daftar_buku:
-        print("[-] Tidak ada data buku untuk ditampilkan.\n")
-        return
-
-    # Menentukan lebar setiap kolom tabel
-    lebar_id = 5
-    lebar_judul = 40
-    lebar_penulis = 25
-    lebar_tahun = 6
-
-    # Garis pembatas tabel
-    garis_pembatas = "-" * (lebar_id + lebar_judul + lebar_penulis + lebar_tahun + 13)
-
-    # Mencetak Header Tabel
-    print(garis_pembatas)
-    print(f"| {'ID':<{lebar_id}} | {'Judul Buku':<{lebar_judul}} | {'Penulis':<{lebar_penulis}} | {'Tahun':<{lebar_tahun}} |")
-    print(garis_pembatas)
-
-    # Mencetak Isi Tabel
-    for buku in daftar_buku:
-        print(f"| {buku['id']:<{lebar_id}} | {buku['judul']:<{lebar_judul}} | {buku['penulis']:<{lebar_penulis}} | {buku['tahun']:<{lebar_tahun}} |")
-    
-    print(garis_pembatas)
-    print(f"Total: {len(daftar_buku)} buku\n")
+    """Mencetak tabel dari list buku (list of dict)."""
+    garis = "-" * 100
+    print(garis)
+    print(f"{'No':<4}{'Kode':<9}{'Judul':<28}{'Pengarang':<20}"
+          f"{'Genre':<16}{'Tahun':<7}Status")
+    print(garis)
+    for no, b in enumerate(daftar_buku, start=1):
+        status = f"[{b['status'].upper()}]"
+        print(f"{no:<4}{_potong(b['kode_buku'], 8):<9}"
+              f"{_potong(b['judul'], 27):<28}"
+              f"{_potong(b['pengarang'], 19):<20}"
+              f"{_potong(b['genre'], 15):<16}"
+              f"{b['tahun_terbit']:<7}{status}")
+    print(garis)

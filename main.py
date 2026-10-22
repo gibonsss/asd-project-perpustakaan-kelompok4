@@ -1,4 +1,4 @@
-"""SISTEM PERPUSTAKAAN MINI (Tahap 1: Array & Struct).
+"""Sistem Perpustakaan Mini (Tahap 1: Array & Struct).
 
 Jalankan dengan: python main.py
 """
@@ -9,14 +9,6 @@ from fitur.status import update_status
 from fitur.filter_genre import filter_genre
 from fitur.hapus_buku import hapus_buku
 
-# Panggil fungsi saat opsi menu dipilih:
-# tambah(tambah_buku)
-# tampil(tampil_semua_buku)
-# cari_buku(cari_buku)
-# status(update_status)
-# filter_genre(filter_genre)
-# hapus_buku(daftar_buku)
-
 MENU = {
     "1": ("Tambah buku baru", tambah_buku),
     "2": ("Tampilkan semua buku", tampil_semua_buku),
@@ -26,15 +18,17 @@ MENU = {
     "6": ("Hapus buku", hapus_buku),
 }
 
+
 def tampilkan_menu():
     print("\n=== SISTEM PERPUSTAKAAN MINI ===")
     for nomor, (nama, _) in MENU.items():
         print(f"{nomor}. {nama}")
     print("0. Keluar")
 
+
 def main():
     while True:
-        tampilkna_menu()
+        tampilkan_menu()
         pilihan = input("Pilih menu: ").strip()
         if pilihan == "0":
             print("Terima kasih. Program selesai.")
@@ -42,9 +36,9 @@ def main():
         if pilihan in MENU:
             print()
             MENU[pilihan][1]()
-            input("\nTekan Enter untuk kembali ke menu...")
         else:
             print("Pilihan tidak valid. Masukkan angka 0 sampai 6.")
+
 
 if __name__ == "__main__":
     main()

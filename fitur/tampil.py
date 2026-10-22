@@ -1,5 +1,5 @@
 from data.koleksi import koleksi_buku, STATUS_TERSEDIA, STATUS_DIPINJAM
-from utils.tampilan import cetak_tabel
+from utils.tampilan_tabel import cetak_tabel
  
  
 def _hitung_ringkasan(daftar_buku):

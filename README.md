@@ -17,14 +17,14 @@ UTS ALGORITMA DAN STRUKTUR DATA
 
 ## Deskripsi Sistem
 
-Sistem Perpustakaan Mini adalah program berbasis terminal (CLI) untuk membantu petugas mengelola koleksi buku: menambah, menampilkan, mencari, memfilter berdasarkan genre, mengubah status peminjaman, dan menghapus buku. Setiap buku disimpan sebagai dictionary dalam list of dictionary di memori (Array of Struct). Data tidak disimpan ke file, sehingga kembali ke data contoh setiap program dijalankan ulang
+Sistem Perpustakaan Mini adalah program berbasis terminal (CLI) untuk membantu petugas mengelola koleksi buku: menambah, menampilkan, mencari, memfilter berdasarkan genre, mengubah status peminjaman, dan menghapus buku. Setiap buku disimpan sebagai dictionary dalam list of dictionary di memori (Array of Struct). Data tidak disimpan ke file, sehingga kembali ke data contoh setiap program dijalankan ulang.
 
 ## Cara Menjalankan
 
 Syarat: Python 3.8 atau lebih baru. Tidak memerlukan library tambahan.
 
 ```bash
-git clone https://github.com/(gibonsss)/asd-project-perpustakaan-kelompok4.git
+git clone https://github.com/gibonsss/asd-project-perpustakaan-kelompok4.git
 cd asd-project-perpustakaan-kelompok4
 python main.py
 ```
@@ -46,14 +46,14 @@ Setelah sebuah fitur selesai, tekan Enter lagi untuk kembali ke menu.
 Program dimulai dengan 6 buku contoh (BK001 sampai BK006), tiga di antaranya
 berstatus Dipinjam, sehingga seluruh fitur dapat langsung dicoba.
 
-koleksi_buku = [
-    _buku("BK001", "Algoritma dan Pemrograman", "Rinaldi Munir",     "Teknologi",    2020, STATUS_TERSEDIA),
-    _buku("BK002", "Laskar Pelangi",            "Andrea Hirata",     "Fiksi",        2005, STATUS_DIPINJAM),
-    _buku("BK003", "Pengantar Algoritma",       "Thomas H. Cormen",  "Teknologi",    2009, STATUS_DIPINJAM),
-    _buku("BK004", "Dune",                      "Frank Herbert",     "Fiksi Ilmiah", 1965, STATUS_TERSEDIA),
-    _buku("BK005", "Cosmos",                    "Carl Sagan",        "Sains",        1980, STATUS_TERSEDIA),
-    _buku("BK006", "Sapiens",                   "Yuval Noah Harari", "Sejarah",      2011, STATUS_DIPINJAM),
-]
+| No | Kode | Judul | Pengarang | Genre | Tahun Terbit | Status |
+|---|---|---|---|---|---|---|
+| 1 | BK001 | Algoritma dan Pemrograman | Rinaldi Munir | Teknologi | 2020 | Tersedia |
+| 2 | BK002 | Laskar Pelangi | Andrea Hirata | Fiksi | 2005 | Dipinjam |
+| 3 | BK003 | Pengantar Algoritma | Thomas H. Cormen | Teknologi | 2009 | Dipinjam |
+| 4 | BK004 | Dune | Frank Herbert | Fiksi Ilmiah | 1965 | Tersedia |
+| 5 | BK005 | Cosmos | Carl Sagan | Sains | 1980 | Tersedia |
+| 6 | BK006 | Sapiens | Yuval Noah Harari | Sejarah | 2011 | Dipinjam |
 
 ## Struktur Folder
 
@@ -77,13 +77,13 @@ fitur/
 
 | Anggota | Tugas |
 |---|---|
-| (Fathir Wafi Ivansyah) | File fitur Hapus Buku dan Cari |
-| (Giftfen Yurina Adventius) | File fitur filter_genre dan ulits/tampilan_tabel |
-| (Azizah Nailah Ramadhani) | File fitur tambah buku baru dan update status buku |
-| (iAhmad Yusuh Mahendra) | File koleksi.py dan fitur tampilkan semua buku |
-| (Ghibran Maulana Surya) | File `main.py`, `validasi.py`, review dan merge Pull Request,README |
+| Fathir Wafi Ivansyah | File fitur Hapus Buku (`hapus_buku.py`) dan Cari (`cari.py`) |
+| Giftfen Yurian Adventius | File fitur `filter_genre.py` dan `utils/tampilan_tabel.py` |
+| Azizah Nailah Ramadhani | File fitur tambah buku baru (`tambah.py`) dan update status buku (`status.py`) |
+| Ahmad Yusuf Mahendra | File `data/koleksi.py` dan fitur tampilkan semua buku (`tampil.py`) |
+| Ghibran Maulana Surya | File `main.py`, `utils/validasi.py`, review dan merge Pull Request, README |
 
 ## Alur Kerja Git
 
-Branch `main` berisi versi stabil. Pengembangan dan penginputan dilakukan di branch `develop`, dan setiap fitur dikerjakan di branch fitur masing-masing, lalu digabung lewat
+Branch `main` berisi versi stabil. Pengembangan dilakukan di branch `develop`, dan setiap fitur dikerjakan di branch fitur masing-masing, lalu digabung lewat
 Pull Request yang di-review ketua.

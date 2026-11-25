@@ -2,6 +2,8 @@
 from data.koleksi import koleksi_buku, cari_by_kode
 from utils.validasi import input_tidak_kosong, konfirmasi
 from utils.tampilan_tabel import cetak_tabel
+from data.riwayat import catat_riwayat
+
 
 
 def hapus_buku():

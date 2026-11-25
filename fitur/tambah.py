@@ -1,5 +1,6 @@
 from data.koleksi import koleksi_buku, cari_by_kode
 from utils.validasi import input_tidak_kosong, input_tahun
+from data.riwayat import catat_riwayat
 
 
 def tambah_buku():

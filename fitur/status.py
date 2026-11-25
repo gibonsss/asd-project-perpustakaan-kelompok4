@@ -22,6 +22,8 @@ def update_status():
 
     if konfirmasi(f"Ubah status dari {lama} menjadi {baru}?"):
         buku["status"] = baru
+        catat_riwayat("PINJAM" if baru == "Dipinjam" else "KEMBALI",   # DIPERBAIKI
+                      buku["kode_buku"], buku["judul"], lama, baru)    # DIPERBAIKI
         print(f"Buku '{buku['judul']}' berhasil {aksi}. "
               f"Status diubah: {lama} menjadi {baru}.")
     else:

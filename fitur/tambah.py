@@ -25,4 +25,5 @@ def tambah_buku():
         "tahun_terbit": tahun,
         "status": "Tersedia",
     })
+    catat_riwayat("TAMBAH", kode, judul, None, "Tersedia")
     print(f"Buku '{judul}' dengan kode {kode} berhasil ditambahkan ke koleksi.")

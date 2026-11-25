@@ -1,3 +1,4 @@
+from datetime import datetime
 
 class Node:
     """Satu kotak data: berisi data dan penunjuk ke node berikutnya."""
@@ -56,6 +57,8 @@ def catat_riwayat(aksi, kode_buku, judul, nilai_lama, nilai_baru):
     nilai_baru  : nilai sesudah berubah (None jika tidak ada)
     """
     catatan = {
+        "no_urut": daftar_riwayat.panjang() + 1,                         # DIPERBAIKI
+        "waktu": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),           # DIPERBAIKI
         "aksi": aksi,
         "kode_buku": kode_buku,
         "judul": judul,

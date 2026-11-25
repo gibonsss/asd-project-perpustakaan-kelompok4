@@ -25,6 +25,8 @@ def hapus_buku():
 
     if konfirmasi("Yakin ingin menghapus buku ini?"):
         koleksi_buku.remove(buku)
+        catat_riwayat("HAPUS", buku["kode_buku"], buku["judul"],   # DIPERBAIKI
+                      buku["status"], None)                        # DIPERBAIKI
         print(f"Buku '{buku['judul']}' dengan kode {buku['kode_buku']} "
               "berhasil dihapus dari koleksi.")
     else:

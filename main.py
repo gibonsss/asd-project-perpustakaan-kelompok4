@@ -8,7 +8,7 @@ from fitur.cari import cari_buku
 from fitur.status import update_status
 from fitur.filter_genre import filter_genre
 from fitur.hapus_buku import hapus_buku
-from fitur.riwayat import tampil_riwayat
+from fitur.riwayat import tampil_riwayat, tampil_riwayat_per_kode
 
 MENU = {
     "1": ("Tambah buku baru", tambah_buku),
@@ -17,7 +17,8 @@ MENU = {
     "4": ("Update status buku", update_status),
     "5": ("Filter buku berdasarkan genre", filter_genre),
     "6": ("Hapus buku", hapus_buku),
-    "7": ("Tampilkan riwayat", tampil_riwayat)
+    "7": ("Tampilkan riwayat", tampil_riwayat),
+    "8": ("Riwayat per kode buku", tampil_riwayat_per_kode)
 }
 
 
@@ -39,7 +40,7 @@ def main():
             print()
             MENU[pilihan][1]()
         else:
-            print("Pilihan tidak valid. Masukkan angka 0 sampai 7.")
+            print("Pilihan tidak valid. Masukkan angka 0 sampai 8.")
         input("\nTekan Enter untuk kembali ke menu...")
 
 

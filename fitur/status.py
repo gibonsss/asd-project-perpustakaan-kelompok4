@@ -1,6 +1,7 @@
 from data.koleksi import cari_by_kode
 from utils.validasi import input_tidak_kosong, konfirmasi
 from utils.tampilan_tabel import cetak_tabel
+from data.riwayat import catat_riwayat
 
 
 def update_status():
